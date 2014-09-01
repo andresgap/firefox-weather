@@ -9,7 +9,6 @@ Cu.import("resource://gre/modules/Services.jsm");
 
 CityTempBG.WeatherService = {
   init: function() {
-
   },
 
   findTemp: function(query_terms, callback) {
