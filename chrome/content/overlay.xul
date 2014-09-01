@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css"
+  href="chrome://citytemp/skin/overlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM "chrome://citytemp/locale/locale.dtd">
+
+<overlay id="citytemp-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://citytemp/content/common.js" />
+  <script type="application/x-javascript"
+    src="chrome://citytemp/content/overlay.js" />
+
+  <commandset id="mainCommandSet">
+    <command id="citytemp-toolbarbutton-command"
+      oncommand="CityTempUI.Overlay.togglePanel();" />
+  </commandset>
+
+  <keyset id="mainKeyset">
+    <key id="citytemp-toolbarbutton-key" key="P"
+      modifiers="shift control"
+      command="citytemp-toolbarbutton-command" />
+  </keyset>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="citytemp-toolbarbutton"
+      label="Weather"
+      class="toolbarbutton-1"
+      command="citytemp-toolbarbutton-command" />
+  </toolbarpalette>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="citytemp-toolbarbutton-menuitem"
+      label="Open Weather Panel"
+      insertbefore="sanitizeSeparator"
+      key="citytemp-toolbarbutton-key"
+      command="citytemp-toolbarbutton-command" />
+  </menupopup>
+
+  <popupset id="mainPopupSet">
+    <panel id="citytemp-panel">
+      <label class="citytemp-panel-title" value="Current Temperature" />
+      <hbox>
+        <textbox id="citytemp-panel-textbox" />
+        <button id="citytemp-panel-button" label="Search"
+          oncommand="CityTempUI.Overlay.findTemp();" />
+      </hbox>
+      <vbox id="citytemp-panel-result-box" hidden="true">
+        <hbox id="citytemp-panel-result-temp-box" align="center" pack="center">
+          <label id="citytemp-panel-result-temp" />
+          <label>°C</label>
+        </hbox>
+        <label id="citytemp-panel-result-place" />
+      </vbox>
+    </panel>
+  </popupset>
+</overlay>

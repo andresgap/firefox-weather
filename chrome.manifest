@@ -1,0 +1,8 @@
+
+content  citytemp             chrome/content/ contentaccessible=yes
+locale   citytemp en-US       chrome/locale/en-US/
+skin     citytemp classic/1.0 chrome/skin/
+resource citytemp             resources/
+
+overlay  chrome://browser/content/browser.xul chrome://citytemp/content/overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://citytemp/skin/overlay.css

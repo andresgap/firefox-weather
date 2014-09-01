@@ -1,0 +1,32 @@
+#citytemp-toolbarbutton {
+  list-style-image: url(chrome://citytemp/skin/images/icon32.png);
+}
+
+toolbar[iconsize="small"] #citytemp-toolbarbutton {
+  list-style-image: url(chrome://citytemp/skin/images/icon16.png);
+}
+
+#citytemp-panel {
+  width: 200px;
+  height: 200px;
+}
+
+.citytemp-panel-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#citytemp-panel-result-box {
+  margin-top: 20px;
+}
+
+#citytemp-panel-result-place {
+  font-size: 20px;
+  text-align: center;
+}
+
+#citytemp-panel-result-temp-box {
+  font-weight: bold;
+  font-size: 50px;
+}
